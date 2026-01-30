@@ -1,57 +1,1599 @@
 {
-  "routes": [
-    {
-      "id": "route1",
-      "name": "셔틀버스",
-      "schedules": {
-        "weekday": {
-          "outbound": [
-            "06:30", "07:00", "07:30", "08:00", "08:30",
-            "09:00", "09:30", "10:00", "10:30", "11:00",
-            "11:30", "12:00", "12:30", "13:00", "13:30",
-            "14:00", "14:30", "15:00", "15:30", "16:00",
-            "16:30", "17:00", "17:30", "18:00", "18:30",
-            "19:00", "19:30", "20:00", "20:30", "21:00"
-          ],
-          "inbound": [
-            "07:00", "07:30", "08:00", "08:30", "09:00",
-            "09:30", "10:00", "10:30", "11:00", "11:30",
-            "12:00", "12:30", "13:00", "13:30", "14:00",
-            "14:30", "15:00", "15:30", "16:00", "16:30",
-            "17:00", "17:30", "18:00", "18:30", "19:00",
-            "19:30", "20:00", "20:30", "21:00", "21:30"
-          ]
+    "schedules": [
+        {
+            "type": "weekday",
+            "direction": "outbound",
+            "route": "밀양 → 부산대 밀양캠퍼스",
+            "timetable": [
+                {
+                    "order": 1,
+                    "origin": "교동",
+                    "departureTime": "06:01",
+                    "yeongnamru": "06:14",
+                    "miryangStation": "06:45",
+                    "pnu": "06:57",
+                    "destination": "용성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 2,
+                    "origin": "밀양역",
+                    "departureTime": null,
+                    "yeongnamru": null,
+                    "miryangStation": "07:00",
+                    "pnu": "07:12",
+                    "destination": "칠성",
+                    "routeName": null,
+                    "note": null
+                },
+                {
+                    "order": 3,
+                    "origin": "교동",
+                    "departureTime": "06:10",
+                    "yeongnamru": "06:19",
+                    "miryangStation": "07:20",
+                    "pnu": "07:32",
+                    "destination": "용성",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 4,
+                    "origin": "터미널",
+                    "departureTime": "08:05",
+                    "yeongnamru": "08:10",
+                    "miryangStation": "08:20",
+                    "pnu": "08:32",
+                    "destination": "칠성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 5,
+                    "origin": "교동",
+                    "departureTime": "08:24",
+                    "yeongnamru": "08:33",
+                    "miryangStation": "08:45",
+                    "pnu": "08:53",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 6,
+                    "origin": "유천",
+                    "departureTime": "08:25",
+                    "yeongnamru": "08:45",
+                    "miryangStation": "08:56",
+                    "pnu": "09:04",
+                    "destination": "부산대",
+                    "routeName": "6번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 7,
+                    "origin": "교동",
+                    "departureTime": "09:12",
+                    "yeongnamru": "09:25",
+                    "miryangStation": "09:35",
+                    "pnu": "09:43",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 8,
+                    "origin": "교동",
+                    "departureTime": "09:28",
+                    "yeongnamru": "09:41",
+                    "miryangStation": "09:48",
+                    "pnu": "09:56",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 9,
+                    "origin": "교동",
+                    "departureTime": "09:44",
+                    "yeongnamru": "09:53",
+                    "miryangStation": "10:05",
+                    "pnu": "10:13",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 10,
+                    "origin": "터미널",
+                    "departureTime": "10:10",
+                    "yeongnamru": "10:15",
+                    "miryangStation": "10:22",
+                    "pnu": "10:32",
+                    "destination": "용성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 11,
+                    "origin": "터미널",
+                    "departureTime": "11:12",
+                    "yeongnamru": null,
+                    "miryangStation": "11:26",
+                    "pnu": "11:38",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 12,
+                    "origin": "교동",
+                    "departureTime": "11:20",
+                    "yeongnamru": "11:33",
+                    "miryangStation": "11:48",
+                    "pnu": "11:56",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 13,
+                    "origin": "터미널",
+                    "departureTime": "12:22",
+                    "yeongnamru": null,
+                    "miryangStation": "12:36",
+                    "pnu": "12:48",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 14,
+                    "origin": "교동",
+                    "departureTime": "12:32",
+                    "yeongnamru": "12:41",
+                    "miryangStation": "12:50",
+                    "pnu": "13:00",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 15,
+                    "origin": "교동",
+                    "departureTime": "13:28",
+                    "yeongnamru": "13:37",
+                    "miryangStation": "13:50",
+                    "pnu": "14:02",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 16,
+                    "origin": "교동",
+                    "departureTime": "13:52",
+                    "yeongnamru": "14:05",
+                    "miryangStation": "14:14",
+                    "pnu": "14:27",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 17,
+                    "origin": "터미널",
+                    "departureTime": "14:22",
+                    "yeongnamru": null,
+                    "miryangStation": "14:36",
+                    "pnu": "14:48",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 18,
+                    "origin": "교동",
+                    "departureTime": "14:24",
+                    "yeongnamru": "14:33",
+                    "miryangStation": "14:45",
+                    "pnu": "14:57",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 19,
+                    "origin": "교동",
+                    "departureTime": "15:20",
+                    "yeongnamru": "15:29",
+                    "miryangStation": "15:40",
+                    "pnu": "15:52",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 20,
+                    "origin": "교동",
+                    "departureTime": "15:44",
+                    "yeongnamru": "15:53",
+                    "miryangStation": "16:05",
+                    "pnu": "16:17",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 21,
+                    "origin": "교동",
+                    "departureTime": "16:24",
+                    "yeongnamru": "16:33",
+                    "miryangStation": "16:42",
+                    "pnu": "16:54",
+                    "destination": "칠성",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 22,
+                    "origin": "터미널",
+                    "departureTime": "17:10",
+                    "yeongnamru": "17:15",
+                    "miryangStation": "17:23",
+                    "pnu": "17:35",
+                    "destination": "용성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 23,
+                    "origin": "교동",
+                    "departureTime": "17:20",
+                    "yeongnamru": "17:29",
+                    "miryangStation": "17:44",
+                    "pnu": "17:56",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 24,
+                    "origin": "터미널",
+                    "departureTime": "17:25",
+                    "yeongnamru": "롯데A30",
+                    "miryangStation": "17:45",
+                    "pnu": "17:57",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 25,
+                    "origin": "교동",
+                    "departureTime": "17:44",
+                    "yeongnamru": "17:57",
+                    "miryangStation": "18:10",
+                    "pnu": "18:22",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 26,
+                    "origin": "터미널",
+                    "departureTime": "18:32",
+                    "yeongnamru": "18:37",
+                    "miryangStation": "18:45",
+                    "pnu": "18:57",
+                    "destination": "용성",
+                    "routeName": "6번",
+                    "note": null
+                },
+                {
+                    "order": 27,
+                    "origin": "교동",
+                    "departureTime": "19:04",
+                    "yeongnamru": "19:17",
+                    "miryangStation": "19:30",
+                    "pnu": "19:42",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 28,
+                    "origin": "터미널",
+                    "departureTime": "19:30",
+                    "yeongnamru": "19:35",
+                    "miryangStation": "19:44",
+                    "pnu": "19:56",
+                    "destination": "칠성",
+                    "routeName": "6번",
+                    "note": null
+                },
+                {
+                    "order": 29,
+                    "origin": "교동",
+                    "departureTime": "19:48",
+                    "yeongnamru": "20:01",
+                    "miryangStation": "20:08",
+                    "pnu": "20:20",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 30,
+                    "origin": "교동",
+                    "departureTime": "20:26",
+                    "yeongnamru": "20:35",
+                    "miryangStation": "20:42",
+                    "pnu": "20:52",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 31,
+                    "origin": "교동",
+                    "departureTime": "20:40",
+                    "yeongnamru": "20:53",
+                    "miryangStation": "21:05",
+                    "pnu": "21:17",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 32,
+                    "origin": "교동",
+                    "departureTime": "21:41",
+                    "yeongnamru": "21:50",
+                    "miryangStation": "21:57",
+                    "pnu": "22:09",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 33,
+                    "origin": "교동",
+                    "departureTime": "22:00",
+                    "yeongnamru": "22:13",
+                    "miryangStation": "22:22",
+                    "pnu": "22:34",
+                    "destination": "칠성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 34,
+                    "origin": "교동",
+                    "departureTime": "22:44",
+                    "yeongnamru": "22:53",
+                    "miryangStation": "23:00",
+                    "pnu": "23:12",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                }
+            ]
         },
-        "weekend": {
-          "outbound": [
-            "08:00", "09:00", "10:00", "11:00", "12:00",
-            "13:00", "14:00", "15:00", "16:00", "17:00",
-            "18:00", "19:00", "20:00"
-          ],
-          "inbound": [
-            "08:30", "09:30", "10:30", "11:30", "12:30",
-            "13:30", "14:30", "15:30", "16:30", "17:30",
-            "18:30", "19:30", "20:30"
-          ]
+        {
+            "type": "weekday",
+            "direction": "inbound",
+            "route": "부산대 밀양캠퍼스 → 밀양",
+            "timetable": [
+                {
+                    "order": 1,
+                    "origin": "용성",
+                    "departureTime": "07:00",
+                    "pnu": "07:02",
+                    "miryangStation": "07:18",
+                    "yeongnamru": "07:25",
+                    "destination": "부북면",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 2,
+                    "origin": "칠성",
+                    "departureTime": "07:15",
+                    "pnu": "07:20",
+                    "miryangStation": "07:32",
+                    "yeongnamru": "07:39",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 3,
+                    "origin": "용성",
+                    "departureTime": "07:35",
+                    "pnu": "07:37",
+                    "miryangStation": "07:56",
+                    "yeongnamru": "08:03",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 4,
+                    "origin": "칠성",
+                    "departureTime": "08:36",
+                    "pnu": "08:40",
+                    "miryangStation": "08:52",
+                    "yeongnamru": "08:59",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 5,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "08:57",
+                    "miryangStation": "09:12",
+                    "yeongnamru": "09:19",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 6,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "09:06",
+                    "miryangStation": "09:20",
+                    "yeongnamru": "09:27",
+                    "destination": "부북면",
+                    "routeName": "7번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 7,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "09:46",
+                    "miryangStation": "10:00",
+                    "yeongnamru": "10:07",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 8,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "09:58",
+                    "miryangStation": "10:12",
+                    "yeongnamru": "10:19",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 9,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "10:16",
+                    "miryangStation": "10:30",
+                    "yeongnamru": null,
+                    "destination": "현대A",
+                    "routeName": "4-1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 10,
+                    "origin": "용성",
+                    "departureTime": "10:35",
+                    "pnu": "10:38",
+                    "miryangStation": "10:52",
+                    "yeongnamru": "10:59",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 11,
+                    "origin": "삼랑진",
+                    "departureTime": "11:58",
+                    "pnu": "12:18",
+                    "miryangStation": "12:32",
+                    "yeongnamru": "12:39",
+                    "destination": "현대A",
+                    "routeName": "1-2번",
+                    "note": null
+                },
+                {
+                    "order": 12,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "12:00",
+                    "miryangStation": "12:16",
+                    "yeongnamru": "12:23",
+                    "destination": "부북면",
+                    "routeName": "7-1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 13,
+                    "origin": "삼랑진",
+                    "departureTime": "13:08",
+                    "pnu": "13:28",
+                    "miryangStation": "13:44",
+                    "yeongnamru": "13:51",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 14,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "13:00",
+                    "miryangStation": "13:16",
+                    "yeongnamru": "13:23",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 15,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "14:05",
+                    "miryangStation": "14:16",
+                    "yeongnamru": "14:23",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 16,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "14:27",
+                    "miryangStation": "14:40",
+                    "yeongnamru": "14:47",
+                    "destination": "현대A",
+                    "routeName": "7번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 17,
+                    "origin": "삼랑진",
+                    "departureTime": "15:08",
+                    "pnu": "15:28",
+                    "miryangStation": "15:44",
+                    "yeongnamru": "15:51",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 18,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "15:00",
+                    "miryangStation": "15:16",
+                    "yeongnamru": "15:23",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 19,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "15:52",
+                    "miryangStation": "16:00",
+                    "yeongnamru": "16:07",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 20,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "16:19",
+                    "miryangStation": "16:28",
+                    "yeongnamru": null,
+                    "destination": "현대A",
+                    "routeName": "4-1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 21,
+                    "origin": "칠성",
+                    "departureTime": "16:58",
+                    "pnu": "17:02",
+                    "miryangStation": "17:16",
+                    "yeongnamru": "17:23",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 22,
+                    "origin": "용성",
+                    "departureTime": "17:40",
+                    "pnu": "17:42",
+                    "miryangStation": "17:56",
+                    "yeongnamru": "18:03",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 23,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "17:58",
+                    "miryangStation": "18:08",
+                    "yeongnamru": "18:15",
+                    "destination": "부북면",
+                    "routeName": "7번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 24,
+                    "origin": "삼랑진",
+                    "departureTime": "18:20",
+                    "pnu": "18:42",
+                    "miryangStation": "19:00",
+                    "yeongnamru": "19:07",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 25,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "18:22",
+                    "miryangStation": "18:32",
+                    "yeongnamru": "18:39",
+                    "destination": "부북면",
+                    "routeName": "7-1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 26,
+                    "origin": "용성",
+                    "departureTime": "19:03",
+                    "pnu": "19:08",
+                    "miryangStation": "19:24",
+                    "yeongnamru": "19:31",
+                    "destination": "부북면",
+                    "routeName": "7-1번",
+                    "note": null
+                },
+                {
+                    "order": 27,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "19:42",
+                    "miryangStation": "19:50",
+                    "yeongnamru": "19:57",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 28,
+                    "origin": "칠성",
+                    "departureTime": "20:00",
+                    "pnu": "20:04",
+                    "miryangStation": "20:18",
+                    "yeongnamru": "20:25",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 29,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "20:20",
+                    "miryangStation": "20:30",
+                    "yeongnamru": "20:37",
+                    "destination": "부북면",
+                    "routeName": "7번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 30,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "20:52",
+                    "miryangStation": "21:07",
+                    "yeongnamru": "21:14",
+                    "destination": "부북면",
+                    "routeName": "7번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 31,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "21:18",
+                    "miryangStation": "21:28",
+                    "yeongnamru": null,
+                    "destination": "현대A",
+                    "routeName": "4-1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 32,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "22:12",
+                    "miryangStation": "22:24",
+                    "yeongnamru": "22:31",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 33,
+                    "origin": "칠성",
+                    "departureTime": "22:40",
+                    "pnu": "22:44",
+                    "miryangStation": "23:00",
+                    "yeongnamru": "23:07",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 34,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "23:12",
+                    "miryangStation": "23:20",
+                    "yeongnamru": "23:27",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": "신도로"
+                }
+            ]
         },
-        "vacation": {
-          "outbound": [
-            "09:00", "10:00", "11:00", "12:00", "13:00",
-            "14:00", "15:00", "16:00", "17:00", "18:00"
-          ],
-          "inbound": [
-            "09:30", "10:30", "11:30", "12:30", "13:30",
-            "14:30", "15:30", "16:30", "17:30", "18:30"
-          ]
+        {
+            "type": "weekend",
+            "direction": "outbound",
+            "route": "밀양 → 부산대 밀양캠퍼스",
+            "timetable": [
+                {
+                    "order": 1,
+                    "origin": "밀양역",
+                    "departureTime": null,
+                    "yeongnamru": null,
+                    "miryangStation": "07:00",
+                    "pnu": "07:12",
+                    "destination": "칠성",
+                    "routeName": "역",
+                    "note": null
+                },
+                {
+                    "order": 2,
+                    "origin": "터미널",
+                    "departureTime": "08:05",
+                    "yeongnamru": "08:10",
+                    "miryangStation": "08:20",
+                    "pnu": "08:32",
+                    "destination": "칠성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 3,
+                    "origin": "교동",
+                    "departureTime": "08:25",
+                    "yeongnamru": "08:34",
+                    "miryangStation": "08:45",
+                    "pnu": "08:53",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 4,
+                    "origin": "터미널",
+                    "departureTime": "10:10",
+                    "yeongnamru": "10:15",
+                    "miryangStation": "10:22",
+                    "pnu": "10:32",
+                    "destination": "용성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 5,
+                    "origin": "터미널",
+                    "departureTime": "11:12",
+                    "yeongnamru": null,
+                    "miryangStation": "11:26",
+                    "pnu": "11:38",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 6,
+                    "origin": "터미널",
+                    "departureTime": "12:22",
+                    "yeongnamru": null,
+                    "miryangStation": "12:36",
+                    "pnu": "12:48",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 7,
+                    "origin": "터미널",
+                    "departureTime": "14:22",
+                    "yeongnamru": null,
+                    "miryangStation": "14:36",
+                    "pnu": "14:48",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 8,
+                    "origin": "교동",
+                    "departureTime": "15:15",
+                    "yeongnamru": "15:24",
+                    "miryangStation": "15:32",
+                    "pnu": "15:44",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 9,
+                    "origin": "터미널",
+                    "departureTime": "16:25",
+                    "yeongnamru": "16:34",
+                    "miryangStation": "16:42",
+                    "pnu": "16:54",
+                    "destination": "칠성",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 10,
+                    "origin": "터미널",
+                    "departureTime": "17:10",
+                    "yeongnamru": "17:15",
+                    "miryangStation": "17:23",
+                    "pnu": "17:35",
+                    "destination": "용성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 11,
+                    "origin": "터미널",
+                    "departureTime": "17:25",
+                    "yeongnamru": "롯데A30",
+                    "miryangStation": "17:45",
+                    "pnu": "17:57",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 12,
+                    "origin": "교동",
+                    "departureTime": "17:36",
+                    "yeongnamru": "17:49",
+                    "miryangStation": "18:10",
+                    "pnu": "18:22",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 13,
+                    "origin": "터미널",
+                    "departureTime": "18:29",
+                    "yeongnamru": "18:34",
+                    "miryangStation": "18:45",
+                    "pnu": "18:57",
+                    "destination": "용성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 14,
+                    "origin": "터미널",
+                    "departureTime": "19:30",
+                    "yeongnamru": "19:35",
+                    "miryangStation": "19:44",
+                    "pnu": "19:56",
+                    "destination": "칠성",
+                    "routeName": "6번",
+                    "note": null
+                },
+                {
+                    "order": 15,
+                    "origin": "교동",
+                    "departureTime": "20:02",
+                    "yeongnamru": "20:11",
+                    "miryangStation": "20:24",
+                    "pnu": "20:36",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 16,
+                    "origin": "교동",
+                    "departureTime": "20:46",
+                    "yeongnamru": "20:59",
+                    "miryangStation": "21:20",
+                    "pnu": "21:32",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 17,
+                    "origin": "교동",
+                    "departureTime": "21:55",
+                    "yeongnamru": "22:04",
+                    "miryangStation": "22:18",
+                    "pnu": "22:30",
+                    "destination": "칠성",
+                    "routeName": "2번",
+                    "note": null
+                }
+            ]
+        },
+        {
+            "type": "weekend",
+            "direction": "inbound",
+            "route": "부산대 밀양캠퍼스 → 밀양",
+            "timetable": [
+                {
+                    "order": 1,
+                    "origin": "칠성",
+                    "departureTime": "07:15",
+                    "pnu": "07:20",
+                    "miryangStation": "07:35",
+                    "yeongnamru": "07:42",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 2,
+                    "origin": "칠성",
+                    "departureTime": "08:36",
+                    "pnu": "08:40",
+                    "miryangStation": "09:05",
+                    "yeongnamru": "09:12",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 3,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "08:57",
+                    "miryangStation": "09:10",
+                    "yeongnamru": "09:17",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 4,
+                    "origin": "용성",
+                    "departureTime": "10:35",
+                    "pnu": "10:38",
+                    "miryangStation": "10:55",
+                    "yeongnamru": "11:02",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 5,
+                    "origin": "삼랑진",
+                    "departureTime": "11:58",
+                    "pnu": "12:18",
+                    "miryangStation": "12:40",
+                    "yeongnamru": "12:47",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 6,
+                    "origin": "삼랑진",
+                    "departureTime": "13:08",
+                    "pnu": "13:28",
+                    "miryangStation": "13:45",
+                    "yeongnamru": "13:52",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 7,
+                    "origin": "삼랑진",
+                    "departureTime": "15:08",
+                    "pnu": "15:28",
+                    "miryangStation": "15:45",
+                    "yeongnamru": "15:52",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 8,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "15:50",
+                    "miryangStation": "16:10",
+                    "yeongnamru": "16:17",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 9,
+                    "origin": "칠성",
+                    "departureTime": "16:58",
+                    "pnu": "17:02",
+                    "miryangStation": "17:15",
+                    "yeongnamru": "17:22",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 10,
+                    "origin": "용성",
+                    "departureTime": "17:40",
+                    "pnu": "17:42",
+                    "miryangStation": "17:55",
+                    "yeongnamru": "18:02",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 11,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "18:22",
+                    "miryangStation": "18:30",
+                    "yeongnamru": "18:37",
+                    "destination": "현대A",
+                    "routeName": "1-2번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 12,
+                    "origin": "용성",
+                    "departureTime": "19:03",
+                    "pnu": "19:08",
+                    "miryangStation": "19:24",
+                    "yeongnamru": "19:31",
+                    "destination": "부북면",
+                    "routeName": "7-1번",
+                    "note": null
+                },
+                {
+                    "order": 13,
+                    "origin": "칠성",
+                    "departureTime": "20:00",
+                    "pnu": "20:04",
+                    "miryangStation": "20:18",
+                    "yeongnamru": "20:25",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 14,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "20:36",
+                    "miryangStation": "20:54",
+                    "yeongnamru": "21:01",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 15,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "21:34",
+                    "miryangStation": "21:44",
+                    "yeongnamru": "21:51",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 16,
+                    "origin": "칠성",
+                    "departureTime": "22:34",
+                    "pnu": "22:38",
+                    "miryangStation": "22:50",
+                    "yeongnamru": "22:57",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": null
+                }
+            ]
+        },
+        {
+            "type": "vacation",
+            "direction": "outbound",
+            "route": "밀양 → 부산대 밀양캠퍼스",
+            "timetable": [
+                {
+                    "order": 1,
+                    "origin": "교동",
+                    "departureTime": "06:01",
+                    "yeongnamru": "06:14",
+                    "miryangStation": "06:45",
+                    "pnu": "06:57",
+                    "destination": "용성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 2,
+                    "origin": "밀양역",
+                    "departureTime": null,
+                    "yeongnamru": null,
+                    "miryangStation": "07:00",
+                    "pnu": "07:12",
+                    "destination": "칠성",
+                    "routeName": null,
+                    "note": null
+                },
+                {
+                    "order": 3,
+                    "origin": "교동",
+                    "departureTime": "06:10",
+                    "yeongnamru": "06:19",
+                    "miryangStation": "07:20",
+                    "pnu": "07:32",
+                    "destination": "용성",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 4,
+                    "origin": "터미널",
+                    "departureTime": "08:05",
+                    "yeongnamru": "08:10",
+                    "miryangStation": "08:20",
+                    "pnu": "08:32",
+                    "destination": "칠성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 5,
+                    "origin": "교동",
+                    "departureTime": "08:24",
+                    "yeongnamru": "08:33",
+                    "miryangStation": "08:45",
+                    "pnu": "08:53",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 6,
+                    "origin": "교동",
+                    "departureTime": "09:12",
+                    "yeongnamru": "09:25",
+                    "miryangStation": "09:35",
+                    "pnu": "09:43",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 7,
+                    "origin": "터미널",
+                    "departureTime": "10:10",
+                    "yeongnamru": "10:15",
+                    "miryangStation": "10:22",
+                    "pnu": "10:32",
+                    "destination": "용성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 8,
+                    "origin": "터미널",
+                    "departureTime": "11:12",
+                    "yeongnamru": null,
+                    "miryangStation": "11:26",
+                    "pnu": "11:38",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 9,
+                    "origin": "터미널",
+                    "departureTime": "12:22",
+                    "yeongnamru": null,
+                    "miryangStation": "12:36",
+                    "pnu": "12:48",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 10,
+                    "origin": "교동",
+                    "departureTime": "13:28",
+                    "yeongnamru": "13:37",
+                    "miryangStation": "13:50",
+                    "pnu": "14:02",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 11,
+                    "origin": "터미널",
+                    "departureTime": "14:22",
+                    "yeongnamru": null,
+                    "miryangStation": "14:36",
+                    "pnu": "14:48",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 12,
+                    "origin": "교동",
+                    "departureTime": "15:20",
+                    "yeongnamru": "15:29",
+                    "miryangStation": "15:40",
+                    "pnu": "15:52",
+                    "destination": "부산대",
+                    "routeName": "2번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 13,
+                    "origin": "교동",
+                    "departureTime": "16:24",
+                    "yeongnamru": "16:33",
+                    "miryangStation": "16:42",
+                    "pnu": "16:54",
+                    "destination": "칠성",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 14,
+                    "origin": "터미널",
+                    "departureTime": "17:10",
+                    "yeongnamru": "17:15",
+                    "miryangStation": "17:23",
+                    "pnu": "17:35",
+                    "destination": "용성",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 15,
+                    "origin": "터미널",
+                    "departureTime": "17:25",
+                    "yeongnamru": "롯데A30",
+                    "miryangStation": "17:45",
+                    "pnu": "17:57",
+                    "destination": "삼랑진",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 16,
+                    "origin": "교동",
+                    "departureTime": "17:44",
+                    "yeongnamru": "17:57",
+                    "miryangStation": "18:10",
+                    "pnu": "18:22",
+                    "destination": "부산대",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 17,
+                    "origin": "터미널",
+                    "departureTime": "18:32",
+                    "yeongnamru": "18:37",
+                    "miryangStation": "18:45",
+                    "pnu": "18:57",
+                    "destination": "용성",
+                    "routeName": "6번",
+                    "note": null
+                },
+                {
+                    "order": 18,
+                    "origin": "터미널",
+                    "departureTime": "19:30",
+                    "yeongnamru": "19:35",
+                    "miryangStation": "19:44",
+                    "pnu": "19:56",
+                    "destination": "칠성",
+                    "routeName": "6번",
+                    "note": null
+                },
+                {
+                    "order": 19,
+                    "origin": "교동",
+                    "departureTime": "22:00",
+                    "yeongnamru": "22:13",
+                    "miryangStation": "22:22",
+                    "pnu": "22:34",
+                    "destination": "칠성",
+                    "routeName": "1번",
+                    "note": null
+                }
+            ]
+        },
+        {
+            "type": "vacation",
+            "direction": "inbound",
+            "route": "부산대 밀양캠퍼스 → 밀양",
+            "timetable": [
+                {
+                    "order": 1,
+                    "origin": "용성",
+                    "departureTime": "07:00",
+                    "pnu": "07:02",
+                    "miryangStation": "07:18",
+                    "yeongnamru": "07:25",
+                    "destination": "부북면",
+                    "routeName": "7번",
+                    "note": null
+                },
+                {
+                    "order": 2,
+                    "origin": "칠성",
+                    "departureTime": "07:15",
+                    "pnu": "07:20",
+                    "miryangStation": "07:32",
+                    "yeongnamru": "07:39",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 3,
+                    "origin": "용성",
+                    "departureTime": "07:35",
+                    "pnu": "07:37",
+                    "miryangStation": "07:56",
+                    "yeongnamru": "08:03",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 4,
+                    "origin": "칠성",
+                    "departureTime": "08:36",
+                    "pnu": "08:40",
+                    "miryangStation": "08:52",
+                    "yeongnamru": "08:59",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 5,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "08:57",
+                    "miryangStation": "09:12",
+                    "yeongnamru": "09:19",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 6,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "09:46",
+                    "miryangStation": "10:00",
+                    "yeongnamru": "10:07",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "구도로"
+                },
+                {
+                    "order": 7,
+                    "origin": "용성",
+                    "departureTime": "10:35",
+                    "pnu": "10:38",
+                    "miryangStation": "10:52",
+                    "yeongnamru": "10:59",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 8,
+                    "origin": "삼랑진",
+                    "departureTime": "11:58",
+                    "pnu": "12:18",
+                    "miryangStation": "12:32",
+                    "yeongnamru": "12:39",
+                    "destination": "현대A",
+                    "routeName": "1-2번",
+                    "note": null
+                },
+                {
+                    "order": 9,
+                    "origin": "삼랑진",
+                    "departureTime": "13:08",
+                    "pnu": "13:28",
+                    "miryangStation": "13:44",
+                    "yeongnamru": "13:51",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 10,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "14:05",
+                    "miryangStation": "14:16",
+                    "yeongnamru": "14:23",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 11,
+                    "origin": "삼랑진",
+                    "departureTime": "15:08",
+                    "pnu": "15:28",
+                    "miryangStation": "15:44",
+                    "yeongnamru": "15:51",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": null
+                },
+                {
+                    "order": 12,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "15:52",
+                    "miryangStation": "16:00",
+                    "yeongnamru": "16:07",
+                    "destination": "교동",
+                    "routeName": "1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 13,
+                    "origin": "칠성",
+                    "departureTime": "16:58",
+                    "pnu": "17:02",
+                    "miryangStation": "17:16",
+                    "yeongnamru": "17:23",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 14,
+                    "origin": "용성",
+                    "departureTime": "17:40",
+                    "pnu": "17:42",
+                    "miryangStation": "17:56",
+                    "yeongnamru": "18:03",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 15,
+                    "origin": "삼랑진",
+                    "departureTime": "18:20",
+                    "pnu": "18:42",
+                    "miryangStation": "19:00",
+                    "yeongnamru": "19:07",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 16,
+                    "origin": "부산대",
+                    "departureTime": null,
+                    "pnu": "18:22",
+                    "miryangStation": "18:32",
+                    "yeongnamru": "18:39",
+                    "destination": "부북면",
+                    "routeName": "7-1번",
+                    "note": "신도로"
+                },
+                {
+                    "order": 17,
+                    "origin": "용성",
+                    "departureTime": "19:03",
+                    "pnu": "19:08",
+                    "miryangStation": "19:24",
+                    "yeongnamru": "19:31",
+                    "destination": "부북면",
+                    "routeName": "7-1번",
+                    "note": null
+                },
+                {
+                    "order": 18,
+                    "origin": "칠성",
+                    "departureTime": "20:00",
+                    "pnu": "20:04",
+                    "miryangStation": "20:18",
+                    "yeongnamru": "20:25",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                },
+                {
+                    "order": 19,
+                    "origin": "칠성",
+                    "departureTime": "22:40",
+                    "pnu": "22:44",
+                    "miryangStation": "23:00",
+                    "yeongnamru": "23:07",
+                    "destination": "교동",
+                    "routeName": "2번",
+                    "note": null
+                }
+            ]
         }
-      }
+    ],
+    "meta": {
+        "lastUpdated": "2026-01-30",
+        "vacationPeriods": [
+            {
+                "start": "2026-07-01",
+                "end": "2026-08-31"
+            },
+            {
+                "start": "2026-12-20",
+                "end": "2027-02-28"
+            }
+        ],
+        "fieldMapping": {
+            "order": "순서",
+            "origin": "기점",
+            "departureTime": "출발시간",
+            "yeongnamru": "영남루",
+            "miryangStation": "밀양역",
+            "pnu": "부산대",
+            "destination": "종점/방면",
+            "routeName": "노선명",
+            "note": "비고"
+        }
     }
-  ],
-  "meta": {
-    "lastUpdated": "2026-01-30",
-    "vacationPeriods": [
-      { "start": "2026-07-01", "end": "2026-08-31" },
-      { "start": "2026-12-20", "end": "2027-02-28" }
-    ]
-  }
 }

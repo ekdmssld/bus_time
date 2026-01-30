@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 16px;
 }
@@ -33,7 +33,7 @@ header h1 {
     padding: 16px;
     border-radius: 8px;
     margin-bottom: 16px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .filter-group {
@@ -44,7 +44,7 @@ header h1 {
     margin-bottom: 0;
 }
 
-.filter-group > label {
+.filter-group>label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
@@ -97,7 +97,7 @@ header h1 {
     background: #fff;
     padding: 16px;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .current-time {
@@ -109,9 +109,17 @@ header h1 {
     font-size: 0.9rem;
 }
 
+.route-name {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
 .schedule-list {
     list-style: none;
-    max-height: 400px;
+    max-height: 500px;
     overflow-y: auto;
 }
 
@@ -133,11 +141,44 @@ header h1 {
 }
 
 .schedule-item.passed {
-    color: #999;
+    opacity: 0.5;
+}
+
+.schedule-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .schedule-time {
     font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.schedule-details {
+    font-size: 0.85rem;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.route-badge {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.note-badge {
+    background: #fff3e0;
+    color: #e65100;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
     font-weight: 500;
 }
 
@@ -147,10 +188,16 @@ header h1 {
     font-size: 1.2rem;
     cursor: pointer;
     opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.favorite-btn:hover {
+    opacity: 0.6;
 }
 
 .favorite-btn.active {
     opacity: 1;
+    color: #ffc107;
 }
 
 /* 빈 상태 */

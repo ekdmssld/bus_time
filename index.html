@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>버스 시간표</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -28,8 +30,8 @@
             <div class="filter-group">
                 <label>방향</label>
                 <div class="button-group" id="directionGroup">
-                    <button class="filter-btn active" data-value="outbound">왕편</button>
-                    <button class="filter-btn" data-value="inbound">복편</button>
+                    <button class="filter-btn active" data-value="outbound">왕편 (밀양→부산대)</button>
+                    <button class="filter-btn" data-value="inbound">복편 (부산대→밀양)</button>
                 </div>
             </div>
 
@@ -51,6 +53,7 @@
             <div class="current-time">
                 현재 시간: <span id="currentTime">--:--</span>
             </div>
+            <div class="route-name" id="routeName"></div>
             <ul class="schedule-list" id="scheduleList">
                 <!-- 시간표가 여기에 표시됩니다 -->
             </ul>
@@ -63,4 +66,5 @@
     <script src="js/favorites.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>

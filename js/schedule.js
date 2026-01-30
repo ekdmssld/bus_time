@@ -21,25 +21,32 @@ const Schedule = {
 
     /**
      * 조건에 맞는 시간표 반환
-     * @param {string} routeId - 노선 ID
      * @param {string} dayType - 'weekday' | 'weekend' | 'vacation'
      * @param {string} direction - 'outbound' | 'inbound'
      */
-    getSchedule(routeId, dayType, direction) {
+    getSchedule(dayType, direction) {
         if (!this.data) return [];
 
-        const route = this.data.routes.find(r => r.id === routeId);
-        if (!route) return [];
+        const schedule = this.data.schedules.find(
+            s => s.type === dayType && s.direction === direction
+        );
 
-        return route.schedules[dayType]?.[direction] || [];
+        return schedule ? schedule.timetable : [];
     },
 
     /**
-     * 첫 번째 노선 ID 반환
+     * 노선 이름 반환
+     * @param {string} dayType - 'weekday' | 'weekend' | 'vacation'
+     * @param {string} direction - 'outbound' | 'inbound'
      */
-    getDefaultRouteId() {
-        if (!this.data || this.data.routes.length === 0) return null;
-        return this.data.routes[0].id;
+    getRouteName(dayType, direction) {
+        if (!this.data) return '';
+
+        const schedule = this.data.schedules.find(
+            s => s.type === dayType && s.direction === direction
+        );
+
+        return schedule ? schedule.route : '';
     },
 
     /**
@@ -47,5 +54,12 @@ const Schedule = {
      */
     getVacationPeriods() {
         return this.data?.meta?.vacationPeriods || [];
+    },
+
+    /**
+     * 필드 매핑 정보 반환 (한글 레이블용)
+     */
+    getFieldMapping() {
+        return this.data?.meta?.fieldMapping || {};
     }
 };

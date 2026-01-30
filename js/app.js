@@ -33,7 +33,10 @@ const App = {
         this.render();
 
         // 1분마다 현재 시간 업데이트
-        setInterval(() => this.updateCurrentTime(), 60000);
+        setInterval(() => {
+            this.updateCurrentTime();
+            this.render(); // 시간 변경 시 다시 렌더링
+        }, 60000);
     },
 
     /**
@@ -101,44 +104,58 @@ const App = {
      * 시간표 렌더링
      */
     render() {
-        const routeId = Schedule.getDefaultRouteId();
-        if (!routeId) {
+        let timetable = Schedule.getSchedule(this.state.dayType, this.state.direction);
+        const routeName = Schedule.getRouteName(this.state.dayType, this.state.direction);
+
+        // 노선 이름 표시
+        const routeNameEl = document.getElementById('routeName');
+        if (routeNameEl) {
+            routeNameEl.textContent = routeName;
+        }
+
+        if (!timetable || timetable.length === 0) {
             this.renderEmpty('시간표 데이터를 불러올 수 없습니다.');
             return;
         }
 
-        let times = Schedule.getSchedule(routeId, this.state.dayType, this.state.direction);
-
         // 필터 적용
         if (this.state.availableOnly) {
-            times = Filter.filterAvailable(times);
+            timetable = Filter.filterAvailable(timetable, this.state.direction);
         }
         if (this.state.nearbyOnly) {
-            times = Filter.filterNearby(times);
+            timetable = Filter.filterNearby(timetable);
         }
 
-        if (times.length === 0) {
+        if (timetable.length === 0) {
             this.renderEmpty('해당 조건에 맞는 시간표가 없습니다.');
             return;
         }
 
         // 가장 가까운 시간 찾기
-        const closestIndex = Filter.findClosestIndex(times);
+        const closestIndex = Filter.findClosestIndex(timetable);
         const currentMinutes = Utils.timeToMinutes(Utils.getCurrentTime());
 
         // 시간표 렌더링
         const list = document.getElementById('scheduleList');
-        list.innerHTML = times.map((time, index) => {
-            const timeMinutes = Utils.timeToMinutes(time);
-            const isPassed = timeMinutes < currentMinutes;
+        list.innerHTML = timetable.map((item, index) => {
+            const pnuTime = item.pnu;
+            const timeMinutes = pnuTime ? Utils.timeToMinutes(pnuTime) : 0;
+            const isPassed = pnuTime && timeMinutes < currentMinutes;
             const isClosest = index === closestIndex && !isPassed;
-            const isFavorite = Favorites.isFavorite(time, this.state.dayType, this.state.direction);
+            const isFavorite = Favorites.isFavorite(pnuTime, this.state.dayType, this.state.direction);
 
             return `
                 <li class="schedule-item ${isPassed ? 'passed' : ''} ${isClosest ? 'highlight' : ''}">
-                    <span class="schedule-time">⏰ ${time}</span>
+                    <div class="schedule-info">
+                        <span class="schedule-time">🚌 ${pnuTime || '--:--'}</span>
+                        <span class="schedule-details">
+                            ${item.origin} → ${item.destination}
+                            ${item.routeName ? `<span class="route-badge">${item.routeName}</span>` : ''}
+                            ${item.note ? `<span class="note-badge">${item.note}</span>` : ''}
+                        </span>
+                    </div>
                     <button class="favorite-btn ${isFavorite ? 'active' : ''}" 
-                            data-time="${time}">★</button>
+                            data-time="${pnuTime}">★</button>
                 </li>
             `;
         }).join('');

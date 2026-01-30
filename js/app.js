@@ -148,16 +148,21 @@ const App = {
         // 시간표 렌더링
         const list = document.getElementById('scheduleList');
         list.innerHTML = timetable.map((item, index) => {
-            // 방향에 따라 표시할 시간 선택: outbound는 밀양역, inbound는 부산대
-            const displayTime = this.state.direction === 'outbound' ? item.miryangStation : item.pnu;
+            // 방향에 따라 표시할 시간 선택: outbound/direct는 밀양역, inbound는 부산대
+            const displayTime = (this.state.direction === 'outbound' || this.state.direction === 'direct') ? item.miryangStation : item.pnu;
             const timeMinutes = displayTime ? Utils.timeToMinutes(displayTime) : 0;
             const isPassed = displayTime && timeMinutes < currentMinutes;
             const isClosest = index === closestIndex && !isPassed;
             const isFavorite = Favorites.isFavorite(displayTime, this.state.dayType, this.state.direction);
             // 방향에 따른 정류장 시간 표시
-            const stopTimes = this.state.direction === 'outbound'
-                ? `${item.yeongnamru || '--:--'} → ${item.miryangStation || '--:--'} → ${item.pnu || '--:--'}`
-                : `${item.pnu || '--:--'} → ${item.miryangStation || '--:--'} → ${item.yeongnamru || '--:--'}`;
+            let stopTimes;
+            if (this.state.direction === 'direct') {
+                stopTimes = `밀양역 ${item.miryangStation || '--:--'} → 부산대 ${item.pnu || '--:--'} → ${item.destination || '신삼문동'}`;
+            } else if (this.state.direction === 'outbound') {
+                stopTimes = `${item.yeongnamru || '--:--'} → ${item.miryangStation || '--:--'} → ${item.pnu || '--:--'}`;
+            } else {
+                stopTimes = `${item.pnu || '--:--'} → ${item.miryangStation || '--:--'} → ${item.yeongnamru || '--:--'}`;
+            }
 
             return `
                 <li class="schedule-item ${isPassed ? 'passed' : ''} ${isClosest ? 'highlight' : ''}">

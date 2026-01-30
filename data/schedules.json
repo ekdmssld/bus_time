@@ -1570,6 +1570,53 @@
                     "note": null
                 }
             ]
+        },
+        {
+            "type": "weekday",
+            "direction": "direct",
+            "route": "밀양역 → 부산대 → 신삼문동 → 밀양역",
+            "timetable": [
+                {
+                    "order": 1,
+                    "miryangStation": "09:20",
+                    "pnu": "09:30",
+                    "destination": "신삼문동",
+                    "routeName": "직행",
+                    "note": "순환"
+                },
+                {
+                    "order": 2,
+                    "miryangStation": "11:00",
+                    "pnu": "11:10",
+                    "destination": "신삼문동",
+                    "routeName": "직행",
+                    "note": "순환"
+                },
+                {
+                    "order": 3,
+                    "miryangStation": "13:40",
+                    "pnu": "13:50",
+                    "destination": "신삼문동",
+                    "routeName": "직행",
+                    "note": "순환"
+                },
+                {
+                    "order": 4,
+                    "miryangStation": "16:30",
+                    "pnu": "16:40",
+                    "destination": "신삼문동",
+                    "routeName": "직행",
+                    "note": "순환"
+                },
+                {
+                    "order": 5,
+                    "miryangStation": "18:00",
+                    "pnu": "18:10",
+                    "destination": "신삼문동",
+                    "routeName": "직행",
+                    "note": "순환"
+                }
+            ]
         }
     ],
     "meta": {

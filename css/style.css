@@ -217,3 +217,59 @@ header h1 {
     padding: 40px;
     color: #999;
 }
+
+/* 사진으로 보기 섹션 */
+.image-section {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.image-toggle-btn {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.image-toggle-btn:hover {
+    background: #f0f0f0;
+}
+
+.image-container {
+    margin-top: 12px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.image-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.image-tab {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.image-tab.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 4px;
+}

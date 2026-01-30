@@ -204,4 +204,27 @@ const App = {
 };
 
 // 앱 시작
-document.addEventListener('DOMContentLoaded', () => App.init());
+document.addEventListener('DOMContentLoaded', () => {
+    App.init();
+
+    // 사진으로 보기 토글
+    const toggleBtn = document.getElementById('imageToggleBtn');
+    const container = document.getElementById('imageContainer');
+
+    toggleBtn.addEventListener('click', () => {
+        const isVisible = container.style.display !== 'none';
+        container.style.display = isVisible ? 'none' : 'block';
+        toggleBtn.textContent = isVisible ? '📷 사진으로 보기' : '📷 사진 닫기';
+    });
+
+    // 이미지 탭 전환
+    document.querySelectorAll('.image-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.image-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const imageName = tab.dataset.image;
+            document.getElementById('scheduleImage').src = `data/${imageName}.jpeg`;
+        });
+    });
+});

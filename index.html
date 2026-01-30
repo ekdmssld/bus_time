@@ -63,6 +63,18 @@
                 <!-- 시간표가 여기에 표시됩니다 -->
             </ul>
         </section>
+
+        <!-- 사진으로 보기 -->
+        <section class="image-section">
+            <button class="image-toggle-btn" id="imageToggleBtn">📷 사진으로 보기</button>
+            <div class="image-container" id="imageContainer" style="display: none;">
+                <div class="image-tabs">
+                    <button class="image-tab active" data-image="weekday">평일</button>
+                    <button class="image-tab" data-image="withoutweekday">주말/방학</button>
+                </div>
+                <img id="scheduleImage" src="data/weekday.jpeg" alt="시간표 이미지">
+            </div>
+        </section>
     </div>
 
     <script src="js/utils.js"></script>

@@ -4,6 +4,10 @@
 
 > **실제 사용자의 불편함을 해결하기 위해 시작한 프로젝트입니다.**
 
+## 🔗 바로가기
+
+**👉 [https://miryang-daeunmummu.vercel.app/](https://miryang-daeunmummu.vercel.app/)**
+
 ---
 
 ## 🎯 프로젝트 배경
@@ -57,7 +61,7 @@
    → 서버 필요 → 호스팅 비용 → 복잡한 배포
 
 ✅ JSON 파일 사용 시
-   → 정적 호스팅만으로 OK → GitHub Pages 무료 배포
+   → 정적 호스팅만으로 OK → Vercel 무료 배포
    → 시간표 수정 = JSON 파일만 수정
 ```
 
@@ -82,15 +86,6 @@
 **해결**: 버튼 클릭으로 즉시 해당 시간표 표시
 
 ```javascript
-// 데이터 구조 설계
-{
-  "schedules": [
-    { "type": "weekday", "direction": "outbound", "timetable": [...] },
-    { "type": "weekday", "direction": "inbound", "timetable": [...] },
-    // ... 총 6개 시간표
-  ]
-}
-
 // 조건에 맞는 시간표 즉시 검색
 getSchedule(dayType, direction) {
     return this.data.schedules.find(
@@ -105,43 +100,17 @@ getSchedule(dayType, direction) {
 
 **해결**: "지금 출발 가능한 버스만" 체크박스로 자동 필터링
 
-```javascript
-// 현재 시간 이후 버스만 필터링
-filterAvailable(timetable) {
-    const currentMinutes = Utils.timeToMinutes(Utils.getCurrentTime());
-    return timetable.filter(item => {
-        const timeMinutes = Utils.timeToMinutes(item.pnu);
-        return timeMinutes >= currentMinutes;
-    });
-}
-```
-
 ### 3. 가장 가까운 버스 하이라이트
 
 **Pain Point**: 다음 버스가 언제인지 직접 계산해야 함
 
 **해결**: 가장 가까운 출발 시간을 자동으로 강조 + 해당 위치로 스크롤
 
-```javascript
-// 가장 가까운 시간 찾기 + 자동 스크롤
-const highlightItem = list.querySelector('.highlight');
-if (highlightItem) {
-    highlightItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-```
-
 ### 4. 오늘 날짜 자동 판별
 
 **Pain Point**: 오늘이 평일인지 주말인지 매번 확인 필요
 
 **해결**: 페이지 로드 시 자동으로 평일/주말 선택
-
-```javascript
-getTodayType() {
-    const day = new Date().getDay();
-    return (day === 0 || day === 6) ? 'weekend' : 'weekday';
-}
-```
 
 ---
 
@@ -159,69 +128,9 @@ getTodayType() {
 ### 기술적 성과
 
 - **번들 크기**: 0KB (프레임워크 없음)
-- **로딩 시간**: < 0.5초 (JSON 파일 크기 ~20KB)
+- **로딩 시간**: < 0.5초
 - **외부 의존성**: 0개
-- **배포**: GitHub Pages 정적 호스팅
-
----
-
-## 📁 프로젝트 구조
-
-```
-bus/
-├── index.html              # 메인 HTML (단일 페이지)
-├── css/
-│   └── style.css           # 스타일시트
-├── js/
-│   ├── app.js              # 메인 앱 로직 (상태 관리, 렌더링)
-│   ├── schedule.js         # 시간표 데이터 처리
-│   ├── filter.js           # 필터링 로직
-│   ├── favorites.js        # 즐겨찾기 (LocalStorage)
-│   └── utils.js            # 유틸리티 함수
-├── data/
-│   └── schedules.json      # 버스 시간표 데이터
-└── docs/
-    ├── PLANNING.md         # 기획서
-    └── DEVELOPMENT.md      # 개발 문서
-```
-
----
-
-## 🚀 실행 방법
-
-### 로컬에서 실행
-```bash
-# 저장소 클론
-git clone https://github.com/ekdmssld/bus_time.git
-cd bus_time
-
-# 로컬 서버 실행 (Python 3)
-python -m http.server 8080
-
-# 또는 Node.js
-npx serve
-```
-
-브라우저에서 `http://localhost:8080` 접속
-
----
-
-## 📝 시간표 수정
-
-시간표 변경 시 `data/schedules.json` 파일만 수정하면 됩니다.
-
-```json
-// 새 버스 추가 예시
-{
-  "order": 35,
-  "origin": "교동",
-  "departureTime": "23:30",
-  "pnu": "00:02",
-  "destination": "부산대",
-  "routeName": "1번",
-  "note": "막차"
-}
-```
+- **배포**: Vercel 정적 호스팅
 
 ---
 
@@ -234,7 +143,15 @@ npx serve
 
 ---
 
-## 📄 라이선스
+## � 문서
+
+- [배포 및 개발 가이드](docs/DEPLOYMENT.md)
+- [개발 문서](docs/DEVELOPMENT.md)
+- [기획서](docs/PLANNING.md)
+
+---
+
+## �📄 라이선스
 
 MIT License
 
@@ -242,4 +159,5 @@ MIT License
 
 ## 👤 개발자
 
+- Instagram: [@daeunmummu](https://instagram.com/daeunmummu)
 - GitHub: [@ekdmssld](https://github.com/ekdmssld)

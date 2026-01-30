@@ -72,5 +72,18 @@ const Favorites = {
             this.add(time, dayType, direction);
             return true;
         }
+    },
+
+    /**
+     * 즐겨찾기만 필터링
+     * @param {Array} timetable - 시간표 배열
+     * @param {string} dayType - 날짜 유형
+     * @param {string} direction - 방향
+     */
+    filterFavoritesOnly(timetable, dayType, direction) {
+        return timetable.filter(item => {
+            const time = item.pnu;
+            return this.isFavorite(time, dayType, direction);
+        });
     }
 };

@@ -85,8 +85,34 @@ App.state = {
     dayType: 'weekday' | 'weekend' | 'vacation',
     direction: 'outbound' | 'inbound',
     availableOnly: boolean,
-    nearbyOnly: boolean
+    nearbyOnly: boolean,
+    favoritesOnly: boolean  // 즐겨찾기만 보기
 }
+```
+
+---
+
+## ⭐ 즐겨찾기만 보기 기능
+
+### 기능 설명
+- 저장한 즐겨찾기 시간만 필터링하여 표시
+- 현재 선택한 조건(날짜 유형, 방향)에 해당하는 즐겨찾기만 표시
+
+### 구현 방식
+1. **UI**: 체크박스 추가 `☐ 즐겨찾기만 보기`
+2. **상태**: `App.state.favoritesOnly` 추가
+3. **필터링**: `Favorites.filterFavoritesOnly()` 함수 추가
+4. **렌더링**: 체크 시 즐겨찾기 시간만 표시
+
+### 데이터 흐름
+```
+시간표 데이터
+     ↓
+[favoritesOnly 체크 시]
+     ↓
+Favorites.getAll() 에서 현재 조건에 맞는 시간 추출
+     ↓
+해당 시간만 필터링하여 렌더링
 ```
 
 ---
@@ -112,6 +138,52 @@ App.state = {
 **복편 (inbound)**
 ```
 기점 → 부산대 → 밀양역 → 영남루 → 종점
+```
+
+---
+
+## 💾 LocalStorage를 이용한 즐겨찾기
+
+### 로그인 없이 즐겨찾기가 가능한 이유
+
+이 프로젝트는 **LocalStorage**라는 브라우저 내장 저장소를 사용합니다.
+
+```
+사용자가 ★ 클릭
+       ↓
+브라우저의 LocalStorage에 저장
+       ↓
+같은 기기 + 같은 브라우저에서 유지됨
+```
+
+### LocalStorage 특징
+
+| 항목 | 설명 |
+|------|------|
+| 저장 위치 | 사용자의 **브라우저** 내부 |
+| 용량 | 약 5MB |
+| 유효 기간 | **영구** (삭제 전까지 유지) |
+| 서버 필요 | ❌ 불필요 |
+| 로그인 필요 | ❌ 불필요 |
+
+### 장점
+- ✅ 서버 없이 즉시 사용 가능
+- ✅ 로그인/회원가입 불필요
+- ✅ 빠른 저장/로드 (네트워크 없이 로컬에서 처리)
+
+### 단점
+- ⚠️ 다른 기기에서는 즐겨찾기 공유 안 됨
+- ⚠️ 브라우저 데이터 삭제 시 사라짐
+- ⚠️ 다른 브라우저(Safari ↔ Chrome)에서 공유 안 됨
+
+### 코드 예시 (`favorites.js`)
+
+```javascript
+// 저장
+localStorage.setItem('bus_favorites', JSON.stringify(['weekday-outbound-08:30']));
+
+// 불러오기
+const favorites = JSON.parse(localStorage.getItem('bus_favorites'));
 ```
 
 ---

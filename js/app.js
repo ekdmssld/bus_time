@@ -8,7 +8,8 @@ const App = {
         dayType: 'weekday',
         direction: 'outbound',
         availableOnly: false,
-        nearbyOnly: false
+        nearbyOnly: false,
+        favoritesOnly: false
     },
 
     /**
@@ -81,6 +82,11 @@ const App = {
             this.state.nearbyOnly = e.target.checked;
             this.render();
         });
+
+        document.getElementById('favoritesOnly').addEventListener('change', (e) => {
+            this.state.favoritesOnly = e.target.checked;
+            this.render();
+        });
     },
 
     /**
@@ -125,9 +131,13 @@ const App = {
         if (this.state.nearbyOnly) {
             timetable = Filter.filterNearby(timetable);
         }
+        if (this.state.favoritesOnly) {
+            timetable = Favorites.filterFavoritesOnly(timetable, this.state.dayType, this.state.direction);
+        }
 
         if (timetable.length === 0) {
-            this.renderEmpty('해당 조건에 맞는 시간표가 없습니다.');
+            const msg = this.state.favoritesOnly ? '저장된 즐겨찾기가 없습니다. ⭐를 눌러 추가하세요.' : '해당 조건에 맞는 시간표가 없습니다.';
+            this.renderEmpty(msg);
             return;
         }
 

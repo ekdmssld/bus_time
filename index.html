@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버스 시간표</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚌 버스 시간표</h1>
+        </header>
+
+        <!-- 상단 조건 선택 영역 -->
+        <section class="filter-section">
+            <!-- 날짜 유형 선택 -->
+            <div class="filter-group">
+                <label>날짜 유형</label>
+                <div class="button-group" id="dayTypeGroup">
+                    <button class="filter-btn active" data-value="weekday">평일</button>
+                    <button class="filter-btn" data-value="weekend">주말/공휴일</button>
+                    <button class="filter-btn" data-value="vacation">방학</button>
+                </div>
+            </div>
+
+            <!-- 방향 선택 -->
+            <div class="filter-group">
+                <label>방향</label>
+                <div class="button-group" id="directionGroup">
+                    <button class="filter-btn active" data-value="outbound">왕편</button>
+                    <button class="filter-btn" data-value="inbound">복편</button>
+                </div>
+            </div>
+
+            <!-- 필터 옵션 -->
+            <div class="filter-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="availableOnly">
+                    지금 출발 가능한 버스만
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="nearbyOnly">
+                    현재 시간 ±3시간만 보기
+                </label>
+            </div>
+        </section>
+
+        <!-- 시간표 영역 -->
+        <section class="schedule-section">
+            <div class="current-time">
+                현재 시간: <span id="currentTime">--:--</span>
+            </div>
+            <ul class="schedule-list" id="scheduleList">
+                <!-- 시간표가 여기에 표시됩니다 -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/schedule.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

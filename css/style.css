@@ -88,17 +88,19 @@ header h1 {
 }
 
 /* 체크박스 */
+.filter-group:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .checkbox-label {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
+    gap: 4px;
     cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.checkbox-label:last-child {
-    margin-bottom: 0;
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 /* 시간표 섹션 */

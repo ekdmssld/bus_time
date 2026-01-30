@@ -82,7 +82,8 @@ const Favorites = {
      */
     filterFavoritesOnly(timetable, dayType, direction) {
         return timetable.filter(item => {
-            const time = item.pnu;
+            // 방향에 따라 표시할 시간 선택
+            const time = direction === 'outbound' ? item.miryangStation : item.pnu;
             return this.isFavorite(time, dayType, direction);
         });
     }

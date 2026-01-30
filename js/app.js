@@ -129,7 +129,7 @@ const App = {
             timetable = Filter.filterAvailable(timetable, this.state.direction);
         }
         if (this.state.nearbyOnly) {
-            timetable = Filter.filterNearby(timetable);
+            timetable = Filter.filterNearby(timetable, this.state.direction);
         }
         if (this.state.favoritesOnly) {
             timetable = Favorites.filterFavoritesOnly(timetable, this.state.dayType, this.state.direction);
@@ -142,22 +142,23 @@ const App = {
         }
 
         // 가장 가까운 시간 찾기
-        const closestIndex = Filter.findClosestIndex(timetable);
+        const closestIndex = Filter.findClosestIndex(timetable, this.state.direction);
         const currentMinutes = Utils.timeToMinutes(Utils.getCurrentTime());
 
         // 시간표 렌더링
         const list = document.getElementById('scheduleList');
         list.innerHTML = timetable.map((item, index) => {
-            const pnuTime = item.pnu;
-            const timeMinutes = pnuTime ? Utils.timeToMinutes(pnuTime) : 0;
-            const isPassed = pnuTime && timeMinutes < currentMinutes;
+            // 방향에 따라 표시할 시간 선택: outbound는 밀양역, inbound는 부산대
+            const displayTime = this.state.direction === 'outbound' ? item.miryangStation : item.pnu;
+            const timeMinutes = displayTime ? Utils.timeToMinutes(displayTime) : 0;
+            const isPassed = displayTime && timeMinutes < currentMinutes;
             const isClosest = index === closestIndex && !isPassed;
-            const isFavorite = Favorites.isFavorite(pnuTime, this.state.dayType, this.state.direction);
+            const isFavorite = Favorites.isFavorite(displayTime, this.state.dayType, this.state.direction);
 
             return `
                 <li class="schedule-item ${isPassed ? 'passed' : ''} ${isClosest ? 'highlight' : ''}">
                     <div class="schedule-info">
-                        <span class="schedule-time">🚌 ${pnuTime || '--:--'}</span>
+                        <span class="schedule-time">🚌 ${displayTime || '--:--'}</span>
                         <span class="schedule-details">
                             ${item.origin} → ${item.destination}
                             ${item.routeName ? `<span class="route-badge">${item.routeName}</span>` : ''}
@@ -165,7 +166,7 @@ const App = {
                         </span>
                     </div>
                     <button class="favorite-btn ${isFavorite ? 'active' : ''}" 
-                            data-time="${pnuTime}">★</button>
+                            data-time="${displayTime}">★</button>
                 </li>
             `;
         }).join('');

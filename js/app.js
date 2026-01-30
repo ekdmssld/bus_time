@@ -154,13 +154,17 @@ const App = {
             const isPassed = displayTime && timeMinutes < currentMinutes;
             const isClosest = index === closestIndex && !isPassed;
             const isFavorite = Favorites.isFavorite(displayTime, this.state.dayType, this.state.direction);
+            // 방향에 따른 정류장 시간 표시
+            const stopTimes = this.state.direction === 'outbound'
+                ? `${item.yeongnamru || '--:--'} → ${item.miryangStation || '--:--'} → ${item.pnu || '--:--'}`
+                : `${item.pnu || '--:--'} → ${item.miryangStation || '--:--'} → ${item.yeongnamru || '--:--'}`;
 
             return `
                 <li class="schedule-item ${isPassed ? 'passed' : ''} ${isClosest ? 'highlight' : ''}">
                     <div class="schedule-info">
                         <span class="schedule-time">🚌 ${displayTime || '--:--'}</span>
                         <span class="schedule-details">
-                            ${item.origin} → ${item.destination}
+                            ${stopTimes}
                             ${item.routeName ? `<span class="route-badge">${item.routeName}</span>` : ''}
                             ${item.note ? `<span class="note-badge">${item.note}</span>` : ''}
                         </span>
